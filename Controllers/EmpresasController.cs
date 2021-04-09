@@ -16,6 +16,7 @@ namespace AulaNetCore.Controllers
     {
     private readonly ILogger<EmpresasController> _loger;
     private readonly IEmpresaService _empresaservice;
+    //adas
 
 
     public EmpresasController(ILogger<EmpresasController> loger, IEmpresaService empresaservice)
