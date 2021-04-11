@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AulaNetCore.DTO.Produto.AdicionarProduto;
 using AulaNetCore.Entities;
 using AulaNetCore.Services;
+using AulaNetCore.UseCase.Produto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -18,11 +20,13 @@ namespace AulaNetCore.Controllers
   {
     private readonly ILogger<ProdutoController> _loger;
     private readonly IProdutoService _produtoservice;
+    private readonly IAdicionarEmpresaUseCase _adicionarproduto;
 
-    public ProdutoController(ILogger<ProdutoController> logger, IProdutoService produtoservice)
+    public ProdutoController(ILogger<ProdutoController> logger, IProdutoService produtoservice, IAdicionarEmpresaUseCase adicionarproduto)
     {
       _loger = logger;
       _produtoservice = produtoservice;
+      _adicionarproduto = adicionarproduto;
     }
 
     [HttpGet]
@@ -38,9 +42,9 @@ namespace AulaNetCore.Controllers
     }
 
     [HttpPost]
-    public IActionResult AddProduto([FromBody] Produto produto)
+    public IActionResult AddProduto([FromBody] AdicionarProdutoRequest produto)
     {
-      return Ok(_produtoservice.AdicionaProduto(produto));
+      return Ok(_adicionarproduto.Executar(produto));
     }
 
     [HttpPut]

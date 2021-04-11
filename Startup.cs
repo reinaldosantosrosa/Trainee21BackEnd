@@ -2,8 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AulaNetCore.Adapter.Produtos;
+using AulaNetCore.Bordas.Adapter;
+using AulaNetCore.Bordas.Repositories;
+using AulaNetCore.Bordas.Repositories.Produtos;
 using AulaNetCore.Context;
+using AulaNetCore.Repositories;
 using AulaNetCore.Services;
+using AulaNetCore.UseCase.Produto;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -30,9 +36,20 @@ namespace AulaNetCore
       services.AddEntityFrameworkNpgsql().AddDbContext<LocalDbContext>(opt => opt.UseNpgsql
            (Configuration.GetConnectionString("urlsquadra")));
 
-      services.AddScoped<IProdutoService, ProdutoService>();
-
+      
+      //Empresas
       services.AddScoped<IEmpresaService, EmpresaService>();
+
+      //dependencie injection Produto
+      services.AddScoped<IProdutoService, ProdutoService>();
+      services.AddScoped<IAdicionarProdutoUseCase, AdicionarProdutoUseCase>();
+      services.AddScoped<IAtualizarEmpresaUseCase, AtualizarProdutoUseCase>();
+      services.AddScoped<IRemoverProdutoUseCase, RemoverProdutoUseCase>();
+      services.AddScoped<IRetornarListaDeProdutoUseCase, RetornarListaDeProdutoUseCase>();
+      services.AddScoped<IRetornarProdutoPorIdUseCase, RetornarProdutoPorIdUseCase>();
+      services.AddScoped<IRepositoryProduto, RepositoryProdutos>();
+      services.AddScoped<IAdicionarProdutoAdapter, AdicionarProdutoAdapter>();
+
       services.AddControllers();
     }
 
