@@ -10,6 +10,7 @@ using AulaNetCore.Context;
 using AulaNetCore.Repositories;
 using AulaNetCore.Services;
 using AulaNetCore.UseCase.Produto;
+using AulaNetCore.UseCase.Produtos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -49,7 +50,8 @@ namespace AulaNetCore
       services.AddScoped<IRetornarProdutoPorIdUseCase, RetornarProdutoPorIdUseCase>();
       services.AddScoped<IRepositoryProduto, RepositoryProdutos>();
       services.AddScoped<IAdicionarProdutoAdapter, AdicionarProdutoAdapter>();
-
+      
+        
       services.AddControllers();
     }
 

@@ -1,7 +1,9 @@
 using AulaNetCore.Bordas;
 using AulaNetCore.Bordas.Adapter;
 using AulaNetCore.Bordas.Repositories;
+using AulaNetCore.Bordas.Repositories.Produtos;
 using AulaNetCore.DTO.Produto.AdicionarProduto;
+using AulaNetCore.UseCase.Produtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AulaNetCore.UseCase.Produto
 {
-  public class AdicionarProdutoUseCase : IAdicionarEmpresaUseCase
+  public class AdicionarProdutoUseCase : IAdicionarProdutoUseCase
   {
     private readonly IRepositoryProduto _repositoryProduto;
     private readonly IAdicionarProdutoAdapter _adapter;
