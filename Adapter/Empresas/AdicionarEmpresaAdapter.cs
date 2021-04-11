@@ -12,17 +12,17 @@ namespace AulaNetCore.Adapter.Empresas
 {
   public class AdicionarEmpresaAdapter : IAdicionarEmpresaAdapter
   {
-    public Empresa ConverterRequestParaEmpresa(AdicionarEmpresaRequest request)
+    public Empresa ConverterRequestParaEmpresa(AdicionarEmpresaRequest e)
     {
-      throw new NotImplementedException();
+      var empresa = new Empresa();
+      empresa.RazaoSocial = e.RazaoSocial;
+      empresa.NomeFantasia = e.NomeFantasia;
+      empresa.CNPJ = e.CNPJ;
+      empresa.InscricaoEstadual = e.InscricaoEstadual;
+
+      return empresa;
     }
 
-    //public Produto ConverterRequestParaProduto(AdicionarProdutoRequest request)
-    //{
-    //  var p = new Produto();
-    //  p.Descricao = request.Descricao;
-    //  return p;
-    //}
 
   }
 }

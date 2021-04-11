@@ -7,18 +7,23 @@ using AulaNetCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Threading.Tasks;
 
 namespace AulaNetCore.Repositories.Empresas
 {
   
-
   public class RepositoryEmpresa : Repository, IRepositoryEmpresa
   {
-     public void Add(Empresa request)
+    public RepositoryEmpresa(LocalDbContext context) : base(context)
     {
-      _context.empresa.Add(request);
-      _context.SaveChanges();
+
+    }
+
+    public void Add(Empresa request)
+    {
+      context.empresa.Add(request);
+      context.SaveChanges();
     }
 
     public void Remover(int id)

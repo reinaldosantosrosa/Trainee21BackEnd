@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace AulaNetCore.Repositories
 {
-  public class Repository
+  public abstract class Repository
   {
-    public LocalDbContext _context;
-    public LocalDbContext RepositoryEmpresas(LocalDbContext local)
+    protected LocalDbContext context ;
+
+    protected Repository(LocalDbContext context)
     {
-      _context = local;
-      return _context;
+      this.context = context;
     }
+
   }
 }

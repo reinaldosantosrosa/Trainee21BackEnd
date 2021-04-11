@@ -26,8 +26,6 @@ namespace AulaNetCore.UseCase.Produto
     }
 
 
-
-
     public AdicionarEmpresaResponse Executar(AdicionarEmpresaRequest T)
     {
       throw new NotImplementedException();

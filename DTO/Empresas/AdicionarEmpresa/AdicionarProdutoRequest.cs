@@ -12,5 +12,7 @@ namespace AulaNetCore.DTO.Empresa.AdicionarEmpresa
     public string RazaoSocial { get; set; }
 
     public string NomeFantasia { get; set; }
+
+    public string InscricaoEstadual { get; set; }
   }
 }
