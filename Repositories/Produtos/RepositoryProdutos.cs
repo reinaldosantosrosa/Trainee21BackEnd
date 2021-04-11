@@ -18,6 +18,17 @@ namespace AulaNetCore.Repositories
       _context.SaveChanges();
     }
 
+    public void Remover(int id)
+    {
+      var obj = _context.produto.Where(p => p.Id == id).FirstOrDefault();
+
+      if (obj == null)
+        throw new System.Exception("Produto nao existe");
+
+      _context.Remove(obj);
+      _context.SaveChanges();
+    }
+
 
   }
 }

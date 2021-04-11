@@ -1,5 +1,8 @@
 using AulaNetCore.Bordas;
+using AulaNetCore.Bordas.Repositories.Produtos;
 using AulaNetCore.DTO.Produto.RemoverProduto;
+using AulaNetCore.UseCase.Produtos;
+using AulaNetCore.UserCase.Produtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +12,30 @@ namespace AulaNetCore.UseCase.Produto
 {
   public class RemoverProdutoUseCase : IRemoverProdutoUseCase
   {
-    public RemoverProdutRequest Executar(RemoverProdutRequest T)
+    private readonly IRepositoryProduto _repositoryprodutos;
+
+    public RemoverProdutoUseCase(IRepositoryProduto repositoryprodutos)
     {
-      throw new NotImplementedException();
+      _repositoryprodutos = repositoryprodutos;
+    }
+
+    public RemoverProdutoResponse Executar(RemoverProdutRequest T)
+    {
+      var response = new RemoverProdutoResponse();
+
+      try
+      {
+   
+        response.msg = "Removido com sucesso";
+
+        _repositoryprodutos.Remover(T.id);
+
+        return response;
+      } catch
+      {
+        response.msg = "Erro ao remover produto";
+        return response;
+      }
     }
   }
 }

@@ -1,4 +1,3 @@
-using AulaNetCore.Bordas;
 using AulaNetCore.DTO.Empresa.AdicionarEmpresa;
 using AulaNetCore.DTO.Produto.AdicionarProduto;
 using AulaNetCore.Entities;
@@ -7,14 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AulaNetCore.UseCase.Empresas
+namespace AulaNetCore.Bordas.Adapter
 {
-
-
-
-  public interface IAdicionarEmpresaUseCase
-
+  public interface IAdicionarEmpresaAdapter
   {
-    public AdicionarEmpresaResponse Executar(AdicionarEmpresaRequest T);
+    public Empresa ConverterRequestParaEmpresa(AdicionarEmpresaRequest request);
   }
 }

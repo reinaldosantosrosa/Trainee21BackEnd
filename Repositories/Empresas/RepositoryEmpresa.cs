@@ -13,7 +13,7 @@ namespace AulaNetCore.Repositories.Empresas
 {
   
 
-  public class RepositoryEmpresas : Repository, IRepositoryEmpresa
+  public class RepositoryEmpresa : Repository, IRepositoryEmpresa
   {
      public void Add(Empresa request)
     {
@@ -21,5 +21,9 @@ namespace AulaNetCore.Repositories.Empresas
       _context.SaveChanges();
     }
 
+    public void Remover(int id)
+    {
+      throw new NotImplementedException();
+    }
   }
 }

@@ -7,5 +7,6 @@ namespace AulaNetCore.DTO.Produto.RemoverProduto
 {
   public class RemoverProdutoResponse
   {
+    public string msg { get; set; }
   }
 }

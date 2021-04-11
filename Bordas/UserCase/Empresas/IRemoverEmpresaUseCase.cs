@@ -1,4 +1,5 @@
 using AulaNetCore.Bordas;
+using AulaNetCore.DTO.Empresa.RemoverEmpresa;
 using AulaNetCore.DTO.Produto.RemoverProduto;
 using System;
 using System.Collections.Generic;

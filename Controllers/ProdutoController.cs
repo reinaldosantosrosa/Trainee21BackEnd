@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AulaNetCore.DTO.Produto.AdicionarProduto;
+using AulaNetCore.DTO.Produto.RemoverProduto;
 using AulaNetCore.Entities;
 using AulaNetCore.Services;
 using AulaNetCore.UseCase.Produto;
+using AulaNetCore.UseCase.Produtos;
+using AulaNetCore.UserCase.Produtos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -20,13 +23,15 @@ namespace AulaNetCore.Controllers
   {
     private readonly ILogger<ProdutoController> _loger;
     private readonly IProdutoService _produtoservice;
-    private readonly IAdicionarEmpresaUseCase _adicionarproduto;
+    private readonly IAdicionarProdutoUseCase _adicionarproduto;
+    private readonly IRemoverProdutoUseCase _removerProduto;
 
-    public ProdutoController(ILogger<ProdutoController> logger, IProdutoService produtoservice, IAdicionarEmpresaUseCase adicionarproduto)
+    public ProdutoController(ILogger<ProdutoController> logger, IProdutoService produtoservice, IAdicionarProdutoUseCase adicionarproduto, IRemoverProdutoUseCase removerProduto)
     {
       _loger = logger;
       _produtoservice = produtoservice;
       _adicionarproduto = adicionarproduto;
+      _removerProduto = removerProduto;
     }
 
     [HttpGet]
@@ -55,9 +60,9 @@ namespace AulaNetCore.Controllers
 
     [HttpDelete("{id}")]
 
-    public IActionResult DeleteProduto(int id)
+    public IActionResult DeleteProduto(RemoverProdutRequest id)
     {
-      return Ok(_produtoservice.DeletarProduto(id));
+      return Ok(_removerProduto.Executar(id));
     }
 
 

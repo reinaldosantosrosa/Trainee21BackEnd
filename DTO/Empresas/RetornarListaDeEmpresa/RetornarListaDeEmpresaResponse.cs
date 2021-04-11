@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AulaNetCore.DTO.Produto.RetornarEmpresaPorId
+namespace AulaNetCore.DTO.Empresa.RetornarListaDeEmpresa
 {
-  public class RetornarEmpresaPorIdResponse
+  public class RetornarListaDeEmpresaResponse
   {
+
   }
 }

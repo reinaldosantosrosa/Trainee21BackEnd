@@ -2,15 +2,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AulaNetCore.Adapter.Empresas;
 using AulaNetCore.Adapter.Produtos;
 using AulaNetCore.Bordas.Adapter;
 using AulaNetCore.Bordas.Repositories;
+using AulaNetCore.Bordas.Repositories.Empresas;
 using AulaNetCore.Bordas.Repositories.Produtos;
 using AulaNetCore.Context;
 using AulaNetCore.Repositories;
+using AulaNetCore.Repositories.Empresas;
 using AulaNetCore.Services;
+using AulaNetCore.UseCase.Empresa;
+using AulaNetCore.UseCase.Empresas;
 using AulaNetCore.UseCase.Produto;
 using AulaNetCore.UseCase.Produtos;
+using AulaNetCore.UserCase.Produtos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -40,11 +46,18 @@ namespace AulaNetCore
       
       //Empresas
       services.AddScoped<IEmpresaService, EmpresaService>();
+      services.AddScoped<IAdicionarEmpresaUseCase, AdicionarEmpresaUseCase>();
+      services.AddScoped<IAtualizarEmpresaUseCase, AtualizarEmpresaUseCase>();
+      services.AddScoped<IRemoverEmpresaUseCase, RemoverEmpresaUseCase>();
+      services.AddScoped<IRetornarListaDeEmpresaUseCase, RetornarListaDeEmpresaUseCase>();
+      services.AddScoped<IRetornarEmpresaPorIdUseCase, RetornarEmpresaPorIdUseCase>();
+      services.AddScoped<IRepositoryEmpresa, RepositoryEmpresa>();
+      services.AddScoped<IAdicionarEmpresaAdapter, AdicionarEmpresaAdapter>();
 
       //dependencie injection Produto
       services.AddScoped<IProdutoService, ProdutoService>();
       services.AddScoped<IAdicionarProdutoUseCase, AdicionarProdutoUseCase>();
-      services.AddScoped<IAtualizarEmpresaUseCase, AtualizarProdutoUseCase>();
+      services.AddScoped<IAtualizarProdutoUseCase, AtualizarProdutoUseCase>();
       services.AddScoped<IRemoverProdutoUseCase, RemoverProdutoUseCase>();
       services.AddScoped<IRetornarListaDeProdutoUseCase, RetornarListaDeProdutoUseCase>();
       services.AddScoped<IRetornarProdutoPorIdUseCase, RetornarProdutoPorIdUseCase>();
