@@ -10,8 +10,14 @@ using System.Threading.Tasks;
 
 namespace AulaNetCore.Repositories
 {
-  public class RepositoryProdutos : Repository, IRepositoryProduto
+  public class RepositoryProdutos :  IRepositoryProduto
   {
+    private LocalDbContext _context;
+    public RepositoryProdutos(LocalDbContext local)
+    {
+      _context = local;
+    
+    }
     public void Add(Produto request)
     {
       _context.produto.Add(request);

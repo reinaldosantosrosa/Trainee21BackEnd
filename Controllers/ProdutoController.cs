@@ -58,11 +58,15 @@ namespace AulaNetCore.Controllers
       return Ok(_produtoservice.AtualizaProduto(produto));
     }
 
+
+
     [HttpDelete("{id}")]
 
-    public IActionResult DeleteProduto(RemoverProdutRequest id)
+    public IActionResult DeleteProduto(int id)
     {
-      return Ok(_removerProduto.Executar(id));
+      var request =new RemoverProdutRequest();
+      request.id = id;
+      return Ok(_removerProduto.Executar(request));
     }
 
 
