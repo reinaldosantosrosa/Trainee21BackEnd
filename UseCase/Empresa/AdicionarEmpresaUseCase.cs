@@ -28,7 +28,20 @@ namespace AulaNetCore.UseCase.Produto
 
     public AdicionarEmpresaResponse Executar(AdicionarEmpresaRequest T)
     {
-      throw new NotImplementedException();
+      var response = new AdicionarEmpresaResponse();
+
+      try
+      {
+        var empresaAdd = _adapter.ConverterRequestParaEmpresa(T);
+        _repositoryEmpresa.Add(empresaAdd);
+        response.msg = "Empresa adcionada";
+        return response;
+      }
+      catch
+      {
+        response.msg = "Erro ao adicionar empresa";
+        return response;
+      }
     }
   }
 }

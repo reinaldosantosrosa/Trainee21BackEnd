@@ -43,9 +43,9 @@ namespace AulaNetCore.Controllers
     }
 
     [HttpPost]
-    public IActionResult AddEmpresa([FromBody] Empresa empresa)
+    public IActionResult AddEmpresa([FromBody] AdicionarEmpresaRequest empresa)
     {
-      return Ok(_empresaservice.AdicionaEmpresa(empresa));
+      return Ok(_adicionarEmpresaUsecase.Executar(empresa));
     }
 
     [HttpPut]
