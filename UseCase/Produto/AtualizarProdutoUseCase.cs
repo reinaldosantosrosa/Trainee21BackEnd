@@ -1,4 +1,5 @@
 using AulaNetCore.DTO.Produto.AtualizarProduto;
+using AulaNetCore.UseCase.Produtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;

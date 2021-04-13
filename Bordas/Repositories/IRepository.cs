@@ -10,5 +10,11 @@ namespace AulaNetCore.Bordas.Repositories
   {
     public void Add(Entity request);
     public void Remover(int id);
+
+    public Entity ObterPorId(int id);
+
+    public IList<Entity> ObterTodos();
+
+
   }
 }

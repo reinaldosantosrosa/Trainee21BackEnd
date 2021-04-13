@@ -1,3 +1,4 @@
+using AulaNetCore.Adapter.Empresas;
 using AulaNetCore.Bordas;
 using AulaNetCore.Bordas.Adapter;
 using AulaNetCore.Bordas.Repositories;
@@ -12,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AulaNetCore.UseCase.Produto
+namespace AulaNetCore.UseCase.Empresas
 {
   public class AdicionarEmpresaUseCase : IAdicionarEmpresaUseCase
   {
@@ -43,5 +44,7 @@ namespace AulaNetCore.UseCase.Produto
         return response;
       }
     }
+
+
   }
 }

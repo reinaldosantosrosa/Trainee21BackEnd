@@ -55,6 +55,7 @@ namespace AulaNetCore.Controllers
     [HttpPut]
     public IActionResult UpdateProduto([FromBody] Produto produto)
     {
+   
       return Ok(_produtoservice.AtualizaProduto(produto));
     }
 

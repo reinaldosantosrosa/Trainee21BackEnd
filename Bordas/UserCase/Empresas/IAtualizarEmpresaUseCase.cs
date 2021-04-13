@@ -6,11 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AulaNetCore.UseCase.Empresa
+namespace AulaNetCore.UseCase.Empresas
 {
   public interface IAtualizarEmpresaUseCase
   {
-    public AtualiazarEmpresaResponse executar(AtualizarEmpresaRequest T);
+    public AtualizarEmpresaResponse Executar(AtualizarEmpresaRequest T);
 
   }
 }

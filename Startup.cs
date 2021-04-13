@@ -12,10 +12,11 @@ using AulaNetCore.Context;
 using AulaNetCore.Repositories;
 using AulaNetCore.Repositories.Empresas;
 using AulaNetCore.Services;
-using AulaNetCore.UseCase.Empresa;
+
 using AulaNetCore.UseCase.Empresas;
 using AulaNetCore.UseCase.Produto;
 using AulaNetCore.UseCase.Produtos;
+using AulaNetCore.UserCase.Empresas;
 using AulaNetCore.UserCase.Produtos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -44,17 +45,20 @@ namespace AulaNetCore
            (Configuration.GetConnectionString("urlsquadra")));
 
       
-      //Empresas
+      //Empresa
       services.AddScoped<IEmpresaService, EmpresaService>();
       services.AddScoped<IAdicionarEmpresaUseCase, AdicionarEmpresaUseCase>();
       services.AddScoped<IAtualizarEmpresaUseCase, AtualizarEmpresaUseCase>();
+
       services.AddScoped<IRemoverEmpresaUseCase, RemoverEmpresaUseCase>();
       services.AddScoped<IRetornarListaDeEmpresaUseCase, RetornarListaDeEmpresaUseCase>();
       services.AddScoped<IRetornarEmpresaPorIdUseCase, RetornarEmpresaPorIdUseCase>();
       services.AddScoped<IRepositoryEmpresa, RepositoryEmpresa>();
       services.AddScoped<IAdicionarEmpresaAdapter, AdicionarEmpresaAdapter>();
 
-      //dependencie injection Produto
+    
+
+      //Produto
       services.AddScoped<IProdutoService, ProdutoService>();
       services.AddScoped<IAdicionarProdutoUseCase, AdicionarProdutoUseCase>();
       services.AddScoped<IAtualizarProdutoUseCase, AtualizarProdutoUseCase>();

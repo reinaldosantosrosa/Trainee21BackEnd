@@ -7,5 +7,6 @@ namespace AulaNetCore.DTO.Empresa.RetornarEmpresaPorId
 {
   public class RetornarEmpresaPorIdRequest
   {
+    public int id { get; set; }
   }
 }

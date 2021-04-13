@@ -14,14 +14,18 @@ namespace AulaNetCore.Adapter.Empresas
   {
     public Empresa ConverterRequestParaEmpresa(AdicionarEmpresaRequest e)
     {
-      var empresa = new Empresa();
-      empresa.RazaoSocial = e.RazaoSocial;
-      empresa.NomeFantasia = e.NomeFantasia;
-      empresa.CNPJ = e.CNPJ;
-      empresa.InscricaoEstadual = e.InscricaoEstadual;
+      var empresa = new Empresa
+      {
+        RazaoSocial = e.RazaoSocial,
+        NomeFantasia = e.NomeFantasia,
+        CNPJ = e.CNPJ,
+        InscricaoEstadual = e.InscricaoEstadual
+      };
 
       return empresa;
     }
+
+
 
 
   }

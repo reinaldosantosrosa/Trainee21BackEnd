@@ -22,7 +22,6 @@ namespace AulaNetCore.UseCase.Produto
       _adapter = adapter;
     }
 
-
     public AdicionarProdutoResponse Executar(AdicionarProdutoRequest T)
     {
       var response = new AdicionarProdutoResponse();

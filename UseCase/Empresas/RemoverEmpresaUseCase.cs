@@ -11,34 +11,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AulaNetCore.UseCase.Empresa
+namespace AulaNetCore.UseCase.Empresas
 {
   public class RemoverEmpresaUseCase : IRemoverEmpresaUseCase
   {
     private readonly IRepositoryEmpresa _repositoryempresa;
 
-    public RemoverEmpresaResponse Executar(RemoverEmpresaRequest T)
+    public RemoverEmpresaUseCase(IRepositoryEmpresa repositoryempresa)
     {
-      throw new NotImplementedException();
+      _repositoryempresa = repositoryempresa;
     }
 
-    //public RemoverProdutoResponse Executar(RemoverProdutRequest T)
-    //{
-    //  var response = new RemoverProdutoResponse();
+    public RemoverEmpresaResponse Executar(RemoverEmpresaRequest T)
+    {
+      var response = new RemoverEmpresaResponse();
 
-    //  try
-    //  {
+      try
+      {
 
-    //    response.msg = "Removido com sucesso";
+        response.msg = "Empresa removida com sucesso";
 
-    //    _repositoryprodutos.Remover(T.id);
-    //    return response;
-    //  } catch
-    //  {
-    //    response.msg = "Erro ao remover produto";
-    //    return response;
-    //  }
-    //}
+        _repositoryempresa.Remover(T.id);
+        return response;
+      }
+      catch
+      {
+        response.msg = "Erro ao remover empresa";
+        return response;
+      }
+
+    }
 
 
   }

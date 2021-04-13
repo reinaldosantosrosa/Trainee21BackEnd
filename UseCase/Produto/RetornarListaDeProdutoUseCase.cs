@@ -1,4 +1,6 @@
 using AulaNetCore.DTO.Produto.RetornarListaDeProduto;
+using AulaNetCore.Entities;
+using AulaNetCore.UseCase.Produtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +14,11 @@ namespace AulaNetCore.UseCase.Produto
     {
       throw new NotImplementedException();
     }
+
+    public IList<Empresa> Executar(Empresa empresa)
+    {
+      throw new NotImplementedException();
+    }
+    
   }
 }

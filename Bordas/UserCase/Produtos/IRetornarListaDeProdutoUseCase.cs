@@ -5,10 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AulaNetCore.UseCase.Produto
+namespace AulaNetCore.UseCase.Produtos
 {
   public interface IRetornarListaDeProdutoUseCase
 
   {
+
   }
 }

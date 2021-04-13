@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace AulaNetCore.DTO.Empresa.AtualizarEmpresa
 {
-  public class AtualiazarEmpresaResponse
+  public class AtualizarEmpresaResponse
   {
+    public string msg { get; set; }
   }
 }

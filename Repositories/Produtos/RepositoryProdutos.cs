@@ -24,6 +24,26 @@ namespace AulaNetCore.Repositories
       _context.SaveChanges();
     }
 
+    public void Atualizar(Produto request)
+    {
+      throw new NotImplementedException();
+    }
+
+    public Produto ObterPorId(int id)
+    {
+      var obj = _context.produto.Where(p => p.Id == id).FirstOrDefault();
+
+      if (obj == null)
+        throw new System.Exception("Produto nao existe");
+
+      return obj;
+    }
+
+    public IList<Produto> ObterTodos()
+    {
+      throw new NotImplementedException();
+    }
+
     public void Remover(int id)
     {
       var obj = _context.produto.Where(p => p.Id == id).FirstOrDefault();

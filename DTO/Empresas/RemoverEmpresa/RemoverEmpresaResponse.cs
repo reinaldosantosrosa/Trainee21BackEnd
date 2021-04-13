@@ -7,5 +7,6 @@ namespace AulaNetCore.DTO.Empresa.RemoverEmpresa
 {
   public class RemoverEmpresaResponse
   {
+    public string msg { get; set; }
   }
 }
